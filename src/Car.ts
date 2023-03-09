@@ -18,6 +18,37 @@ class Car {
         this._ports = ports;
         this._purchasedOn = purchasedOn;
     }
+
+    public purchasedDetails(): string {
+        return `Model: ${this.model},
+            Fuel type: ${this.fuelType}, License plate: ${this._licensePlate}`;
+    }
+
+    // getter
+    public getFuelType(): string {
+       return this.fuelType;
+    }
+
+    public getPorts(): number {
+       return this._ports;
+    }
+
+    public getPurchasedOn(): Date {
+        return this._purchasedOn;
+    }
+
+    // setters
+    public setFuelType(fuelType: string): void {
+        this.fuelType = fuelType;
+    }
+
+    public setPorts(ports: number): void {
+        this._ports = ports;
+    }
+
+    public setPurchasedOn(purchasedOn: Date): void {
+        this._purchasedOn = purchasedOn;
+    }
 }
 
 export default Car;
