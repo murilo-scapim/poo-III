@@ -1,3 +1,6 @@
+import Vehicle from './Vehicle';
+
+// Carro é um Veículo
 class Car extends Vehicle {
    private fuelType: string; // só a própria classe acessa
    private _licensePlate: string;

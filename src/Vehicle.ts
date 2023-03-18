@@ -20,7 +20,7 @@ class Vehicle {
         return this.model;
     }
 
-    public setModel(model: string) {
+    public setModel(model: string): void {
         this.model = model;
     }
 
@@ -28,7 +28,7 @@ class Vehicle {
         return this.color;
     }
 
-    public setColor(color: string) {
+    public setColor(color: string): void {
         this.color = color;
     }
 
@@ -40,3 +40,5 @@ class Vehicle {
         this._purchasedOn = purchasedOn;
     }
 }
+
+export default Vehicle;
