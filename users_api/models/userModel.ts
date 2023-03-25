@@ -14,7 +14,10 @@ class UserModel {
   }
 
   public async getAll(): Promise<User[]> {
-    const users = await this.connection.execute('SELECT * FROM users');
-    console.log(users);
+    const [users] = await this.connection.execute(
+      'SELECT * FROM users');
+    return users as User[]; // type assertion
   }
 }
+
+export default UserModel;
