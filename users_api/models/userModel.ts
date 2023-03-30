@@ -1,10 +1,5 @@
 import { Pool } from 'mysql2/promise';
-
-interface User {
-  id?: number;
-  username: string;
-  password: string;
-}
+import User from '../interfaces/userInterface';
 
 class UserModel {
   public connection: Pool;
