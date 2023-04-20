@@ -7,6 +7,7 @@ const PORT = 3000;
 
 const userController = new UserController();
 
+// rotas
 app.get('/users', userController.getAll);
 
 app.listen(PORT, () => {

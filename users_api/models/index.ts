@@ -6,3 +6,10 @@ const model = new UserModel(connection);
 model.getAll().then((users) => {
     console.log(users);
 });
+
+const user = {
+    username: 'maria',
+    password: 'password'
+}
+
+model.create(user);
