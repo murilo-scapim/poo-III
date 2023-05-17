@@ -14,6 +14,12 @@ class UserModel {
     return users as User[]; // type assertion
   }
 
+  public async getById(id: number): Promise<User> {
+    const [result] = await this.connection.execute('SELECT * FROM users WHERE id = ?;', [id]);
+    const [user] = result as User[];
+    return user;
+  }
+
   public async create(user: User): Promise<User> {
     const { username, password } = user;
     const [{insertId}] = await this.connection

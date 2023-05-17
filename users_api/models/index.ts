@@ -13,3 +13,7 @@ const user = {
 }
 
 model.create(user);
+
+model.getById(1).then((user) => {
+    console.log(user);
+});
