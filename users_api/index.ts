@@ -10,6 +10,7 @@ const userController = new UserController();
 
 // rotas
 app.get('/users', userController.getAll);
+app.get('/users/:id', userController.getById);
 app.post('/users', userController.create);
 
 app.listen(PORT, () => {

@@ -13,6 +13,15 @@ class UserController {
         return response.status(200).json(users);
     }
 
+    public getById = async (request: Request, response: Response) => {
+        const { id } = request.params;
+        const user = await this.service.getById(Number(id));
+        if (!user) {
+            return response.status(404).json({ message: 'User not found'});
+        }
+        return response.status(200).json(user);
+    }
+
     public create = async (request: Request, response: Response) => {
         const user = request.body;
         const userCreated = await this.service.create(user);
