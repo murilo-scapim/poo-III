@@ -27,6 +27,17 @@ class UserModel {
     
     return { id: insertId, ...user } // spread
   }
+
+  public async update(id: number, user: User): Promise<User> {
+    const { username, password } = user;
+    await this.connection.execute('UPDATE users SET username=?, password=? WHERE id = ?',
+      [username, password, id]);
+    return { id, ...user };
+  }
+
+  public async delete(id: number): Promise<void> {
+    await this.connection.execute('DELETE FROM users WHERE id = ?',[id]);
+  }
 }
 
 export default UserModel;

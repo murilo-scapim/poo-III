@@ -27,6 +27,19 @@ class UserController {
         const userCreated = await this.service.create(user);
         return response.status(201).json(userCreated);
     }
+
+    public update = async (request: Request, response: Response) => {
+        const user = request.body;
+        const id = Number(request.params.id);
+        const userUpdated = await this.service.update(id, user);                  
+        return response.status(200).json(userUpdated);
+    }
+
+    public delete = async (request: Request, response: Response) => {
+        const id = Number(request.params.id);
+        await this.service.delete(id);
+        return response.status(204).end();
+    }
 }
 
 export default UserController;
